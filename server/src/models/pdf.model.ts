@@ -1,8 +1,32 @@
 import mongoose from "mongoose";
 
-export interface IPdf extends mongoose.Document {}
+enum PdfStatus {
+  pending = "pending",
+  completed = "completed",
+  failed = "failed",
+}
 
-const pdfSchema = new mongoose.Schema({});
+export interface IPdf extends mongoose.Document {
+  url: string;
+  subjectId: string;
+  status: "pending" | "completed" | "failed";
+}
+
+const pdfSchema = new mongoose.Schema({
+  url: {
+    type: String,
+    required: true,
+  },
+  subjectId: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: String,
+    enum: PdfStatus,
+    default: "pending",
+  },
+});
 
 const PdfModel = mongoose.model<IPdf>("Pdf", pdfSchema);
 
