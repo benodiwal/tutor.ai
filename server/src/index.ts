@@ -2,8 +2,11 @@ import express from "express";
 import cors from "cors";
 import * as dotenv from "dotenv";
 import connectDB from "./utils/mongoose";
+import subjectRouter from "./routes/subject";
+
 import authRouter from "./routes/route";
 import userRouter from "./routes/user";
+
 // import rateLimit from "express-rate-limit";
 
 dotenv.config();
@@ -21,6 +24,7 @@ app.use(express.json());
 //     message: "Too many requests from this IP, please try again in an hour",
 // });
 
+app.use("/api/subject", subjectRouter);
 // Routes
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
