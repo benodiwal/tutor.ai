@@ -35,7 +35,7 @@ const Login = () => {
         onSignin(response.data.user, response.data.token);
 
         if (response.status == 200) {
-            router.push("/overview");
+            router.push("/dashboard");
         }
     }
 

@@ -17,7 +17,7 @@ export default function Home() {
       {
         isAuthenticated ? (
           <Button 
-          onClick={() => router.push("/overview")}
+          onClick={() => router.push("/dashboard")}
           className="text-white">
             DashBoard
           </Button>

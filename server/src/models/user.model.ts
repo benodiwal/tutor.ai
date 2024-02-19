@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-<<<<<<< HEAD
 import bycrptjs from "bcryptjs";
 import crypto from "crypto";
 
@@ -72,19 +71,3 @@ userSchema.methods.createPasswordResetToken = function () {
 };
 
 export const User = mongoose.model<IUser>("User", userSchema);
-=======
-
-export interface IComment extends mongoose.Document {
-  user: mongoose.Types.ObjectId;
-  content: string;
-}
-
-const commentSchema = new mongoose.Schema({
-  user: mongoose.Schema.Types.ObjectId,
-  content: { type: String },
-});
-
-const CommentModel = mongoose.model<IComment>("Comment", commentSchema);
-
-export default CommentModel;
->>>>>>> d6fc650493b2ead90b94d0d1a13667d446eb880f

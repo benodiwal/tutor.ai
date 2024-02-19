@@ -11,19 +11,21 @@ const OverView = () => {
   const router = useRouter();
 
   const createSubject = async () => {
-    const { data } = await axios.post(
-      "http://localhost:5000/workspace",
-      {},
-      {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      }
-    );
+    // const { data } = await axios.post(
+    //   "http://localhost:5000/workspace",
+    //   {},
+    //   {
+    //     headers: {
+    //       Authorization: "Bearer " + localStorage.getItem("token"),
+    //     },
+    //   }
+    // );
 
-    console.log(data.data);
+    // console.log(data.data);
 
-    router.push(`/workspace/${data.data._id}`);
+    // router.push(`/workspace/${data.data._id}`);
+
+    router.push("/create");    
   };
 
   return (
@@ -39,6 +41,7 @@ const OverView = () => {
       </div>
     </div>
   );
+  
 };
 
 export default OverView;

@@ -1,9 +1,9 @@
-const page = () => {
+const TutorPage = () => {
   return (
     <div>
-        Subject
+        Ai Tutor      
     </div>
   )
 }
 
-export default page
+export default TutorPage
